@@ -102,15 +102,7 @@ static NSString *const iRateMacAppStoreURLFormat = @"macappstore://itunes.apple.
 
 @end
 
-
 @implementation iRate
-
-+ (void)load
-{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self sharedInstance];
-    });
-}
 
 + (instancetype)sharedInstance
 {
@@ -202,10 +194,10 @@ static NSString *const iRateMacAppStoreURLFormat = @"macappstore://itunes.apple.
         self.promptForNewVersionIfUserRated = NO;
         self.onlyPromptIfLatestVersion = YES;
         self.onlyPromptIfMainWindowIsAvailable = YES;
-        self.promptAtLaunch = YES;
-        self.usesUntilPrompt = 10;
+        self.promptAtLaunch = NO;
+        self.usesUntilPrompt = 15;
         self.eventsUntilPrompt = 10;
-        self.daysUntilPrompt = 10.0;
+        self.daysUntilPrompt = 15;
         self.usesPerWeekForPrompt = 0.0;
         self.remindPeriod = 1.0;
         self.verboseLogging = NO;
